@@ -1,0 +1,181 @@
+.menuCardContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 1rem;
+  margin-bottom: 1rem; /* Space between cards */
+}
+ 
+.restaurantContainer {
+  padding: 0 4rem;
+  margin-top: 5px;
+ 
+}
+ 
+.itemContainer {
+  flex: 1;
+}
+ 
+.topBorder {
+  border: 2px solid #fe9e0d;
+  width: 60px;
+}
+ 
+.itemTitle {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+ 
+.itemDescription {
+  font-size: 14px;
+  color: #666;
+  font-weight: 600;
+}
+ 
+.priceContainer {
+  display: flex;
+  align-items: center;
+}
+ 
+.itemPrice {
+  font-size: 16px;
+  font-weight: bold;
+  color: #fe9e0d;
+  margin-right: 10px;
+}
+ 
+.addBar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  /* background-color: #f0f0f0; */
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+ 
+.addBar button {
+  background-color: #fe9e0d;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+ 
+.addBar button:hover {
+  background-color: #e88d0c;
+}
+ 
+.restaurantImage {
+  width: 100%;
+  height: 250px; /* Fixed height as per original specs */
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+ 
+.restaurantsHeader {
+  background: linear-gradient(180deg, rgba(254, 158, 13, 0.5) 0%, rgba(252, 76, 2, 0.8) 100%);
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+ 
+.menuTitle {
+  font-size: 2.5rem;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+ 
+.menuSubTitle {
+  font-size: 1.2rem;
+  color: white;
+  font-weight: bold;
+}
+ 
+.added-button {
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+ 
+.remove-button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+ 
+/* Styling for cart popup */
+.cart-popup {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  animation: slideIn 0.5s ease-in-out forwards;
+}
+ 
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+ 
+ 
+/* Media queries for responsiveness */
+@media only screen and (max-width: 768px) {
+  .restaurantContainer {
+    padding: 0 1rem; /* Reduced padding on smaller screens */
+  }
+ 
+  .menuCardContainer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+ 
+  .itemContainer, .priceContainer {
+    width: 100%; /* Full width on smaller screens */
+  }
+ 
+  .addBar {
+    width: 100%; /* Adjust bar to full width */
+    justify-content: space-between; /* Adjust button spacing */
+  }
+ 
+  .itemTitle, .itemDescription, .itemPrice {
+    font-size: smaller; /* Adjust font size for smaller devices */
+  }
+ 
+  .restaurantsHeader {
+    width: 100%; /* Full width header */
+    position: static; /* Remove absolute positioning */
+    transform: none;
+  }
+ 
+  .menuTitle, .menuSubTitle {
+    font-size: 1.5rem; /* Smaller font size for titles */
+  }
+}
+ 

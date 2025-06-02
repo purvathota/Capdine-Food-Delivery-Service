@@ -1,0 +1,52 @@
+.menu-table-container {
+    font-family: Monotype Corsiva, sans-serif;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+    background-image: 'https://th.bing.com/th/id/OIP.zcpjP92WzscoyCUwIDIEAAHaHZ?rs=1&pid=ImgDetMain';
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .menu-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  
+  .menu-table th, .menu-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+  
+  .add-button, .update-button, .delete-button, .edit-button {
+    padding: 8px 12px;
+    cursor: pointer;
+    border: none;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .add-button {
+    background-color: #fe9e0d;
+  }
+  
+  .update-button {
+    background-color: #28a745;
+  }
+  
+  .delete-button {
+    background-color: #3599dc;
+  }
+  
+  .edit-button {
+    background-color: #007bff;
+  }
+  

@@ -1,0 +1,44 @@
+.menuFooterContainer {
+    background-color: rgba(254, 158, 13, 0.5);
+    opacity: 0.9; /* Use RGBA color with alpha value for transparency */
+    margin-top: 2rem;
+    padding: 10px 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+ 
+.companyLogo {
+    width: 50px; /* Add 'px' unit for width */
+    height: 50px; /* Adjust height as needed */
+}
+ 
+.logoNameContainer {
+    display: flex;
+    align-items: center;
+}
+ 
+.logo {
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+}
+ 
+.phone, .address {
+    font-size: 14px;
+    color: #000;
+    font-weight: 600;
+}
+ 
+/* Media query for responsiveness */
+@media screen and (max-width: 768px) {
+    .menuFooterContainer {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        text-align: center; /* Center-align text */
+    }
+ 
+    .companyLogo {
+        margin-bottom: 1rem; /* Add some spacing below the logo on smaller screens */
+    }
+}
+ 

@@ -1,0 +1,44 @@
+# Build artifacts
+node_modules/
+build/  # Or whatever build folder your project uses
+dist/
+.compiled/
+
+# Dependency lock files
+package-lock.json
+
+# IDE or text editor temp files
+.idea/
+.vscode/
+*.iml
+*.swp
+
+# Test coverage reports
+coverage/
+
+# Temporary npm cache directory
+.npm
+
+# Local environment variables
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Hot reloading server logs
+npm-debug.log
+
+# Output from linters and formatters
+eslint.cache
+prettier.cache
+
+# Other editor preferences
+*.sublime-project
+*.sublime-workspace
+
+# Service worker sw.js (if applicable)
+sw.js
+
+# Gulp/Webpack configuration files
+gulpfile.js
+webpack.config.js

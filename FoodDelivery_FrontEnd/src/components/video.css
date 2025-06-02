@@ -1,0 +1,15 @@
+.video-container {
+    max-width: 800px; /* Adjust the maximum width of the video container */
+    margin: 0 auto; /* Center the video horizontally */
+  }
+ 
+  /* Video styles */
+  video {
+    width: 100%; /* Make the video fill the container horizontally */
+    display: block; /* Ensure the video behaves like a block element */
+  }
+ 
+  /* Title styles */
+  h1 {
+    text-align: center; /* Center the title text */
+  }

@@ -1,0 +1,47 @@
+.success-animation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+    background-color: #f8f8f8;
+    text-align: center;
+}
+
+.checkmark {
+    width: 96px;
+    height: 96px;
+    display: block;
+    margin: 20px auto;
+}
+
+.checkmark__circle {
+    stroke-dasharray: 157;
+    stroke-dashoffset: 157;
+    stroke-width: 2;
+    stroke: #4CAF50;
+    fill: none;
+    animation: stroke-circle 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.checkmark__check {
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    stroke-linecap: round;
+    stroke-width: 2;
+    stroke: #4CAF50;
+    fill: none;
+    animation: stroke-check 0.4s cubic-bezier(0.65, 0, 0.45, 1) 0.6s forwards;
+}
+
+@keyframes stroke-circle {
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes stroke-check {
+    100% {
+        stroke-dashoffset: 0;
+    }
+}

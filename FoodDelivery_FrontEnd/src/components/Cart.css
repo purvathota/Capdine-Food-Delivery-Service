@@ -1,0 +1,311 @@
+/* CartPage.css */
+.cart-container {
+    background-color: #FFFFFF;
+    color: #333;
+    padding: 20px;
+    max-width: 800px;
+    margin: 2px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    font-family: 'Arial', sans-serif;
+}
+
+.coupon-select {
+    padding: 10px 15px;
+    /* Adjust padding for better text visibility */
+    margin: 8px 8px;
+    width: 100%;
+    /* Ensure it fills the container */
+    border: 1px solid #ccc;
+    /* Subtle border */
+    border-radius: 5px;
+    /* Rounded corners */
+    background-color: white;
+    /* Background color */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Soft shadow for depth */
+    appearance: none;
+    /* Remove default system appearance */
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    /* Cursor to pointer to indicate it's clickable */
+    font-size: 16px;
+    /* Make text larger and easier to read */
+    color: #333;
+    /* Dark color for text */
+    transition: border-color 0.3s, box-shadow 0.3s;
+    /* Smooth transition for interactions */
+}
+
+.coupon-select:hover {
+    border-color: #888;
+    /* Change border color on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    /* Increase shadow size on hover */
+}
+
+.coupon-select:focus {
+    border-color: #555;
+    /* Darker border on focus for visibility */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    /* Focus shadow */
+    outline: none;
+    /* Remove outline and manage focus with border and shadow */
+}
+
+/* Optionally, you can add a custom dropdown arrow using a background image */
+.coupon-select {
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    /* Position the arrow on the right, centered vertically */
+    background-size: 12px;
+    /* Size of the background image */
+    padding-right: 30px;
+    /* Add padding to prevent text from hiding behind the arrow */
+}
+
+
+.exploreButton {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    /* Green background */
+    color: white;
+    /* White text */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 16px;
+    /* Set a suitable font size */
+    font-weight: bold;
+    /* Make the text bold */
+    text-transform: uppercase;
+    /* Optional: uppercase text */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    /* Smooth transition for hover effects */
+    outline: none;
+    /* Removes the outline to clean up focus styles; handle focus via box-shadow */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    /* Adds a subtle shadow for depth */
+}
+
+.exploreButton:hover,
+.exploreButton:focus {
+    background-color: #367c39;
+    /* Darker shade of green for hover and focus */
+    transform: translateY(-2px);
+    /* Slightly raise the button on hover/focus */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    /* Increase shadow on hover for a "lifting" effect */
+}
+
+.exploreButton:active {
+    background-color: #2e6531;
+    /* Even darker for the active state */
+    transform: translateY(1px);
+    /* Reset position to simulate a press-down effect */
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+    /* Less shadow to simulate the button being pressed */
+}
+
+h2 {
+    color: #FE9900;
+    text-align: center;
+}
+
+.cart-items {
+    margin-bottom: 20px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    /* border:2px solid black; */
+    border-radius: 10px;
+    margin: 1rem 0;
+    padding: 10px 12px;
+    transition: 0.5s;
+}
+
+.cart-item:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.cart-item:hover {
+    background-color: #fafafa;
+}
+
+.product-image {
+    width: 80px;
+    height: 80px;
+    margin-right: 20px;
+    border-radius: 40px;
+    object-fit: cover;
+}
+
+.product-details {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+}
+
+.quantity-control .q-btn {
+    background-color: #FE9900;
+    color: #FFFFFF;
+    border: none;
+    padding: 5px 10px;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    border-radius: 12px;
+}
+
+.quantity-control .q-btn:hover {
+    background-color: #e58900;
+}
+
+.quantity-control span {
+    min-width: 20px;
+    text-align: center;
+}
+
+.cart-summary {
+    text-align: right;
+    padding: 10px 0;
+}
+
+.quantity-control .delete-button {
+    background-color: #FF6347;
+    /* A vivid red color */
+    color: #FFFFFF;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    border-radius: 12px;
+    margin-left: 10px;
+    /* Space from the quantity control */
+}
+
+.quantity-control .delete-button:hover {
+    background-color: #E33000;
+    /* Darker shade when hovered */
+}
+
+
+.checkout-button {
+    background-color: #FE9900;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s;
+    border-radius: 12px;
+}
+
+.checkout-button:hover {
+    background-color: #e58900;
+}
+
+.success-animation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #fff;
+    text-align: center;
+}
+
+.checkmark {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    stroke-width: 2;
+}
+
+.checkmark__circle {
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    stroke-width: 2;
+    stroke-miterlimit: 10;
+    stroke: #7ac142;
+    fill: none;
+    animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.checkmark__check {
+    transform-origin: 50% 50%;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+
+@keyframes stroke {
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .cart-container {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .product-image {
+        width: 60px;
+        height: 60px;
+    }
+
+    .product-details {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .quantity-control {
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cart-item {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .product-image {
+        margin-bottom: 10px;
+    }
+
+    .product-details {
+        order: 3;
+        width: 100%;
+    }
+
+    .quantity-control {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .cart-summary {
+        text-align: center;
+    }
+
+    .checkout-button {
+        width: 100%;
+        /* Ensures button stretches to container width on smaller screens */
+    }
+}

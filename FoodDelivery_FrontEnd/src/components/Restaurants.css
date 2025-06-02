@@ -1,0 +1,147 @@
+.restaurants-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 30px;
+  padding: 40px;
+  min-height: 100vh;
+  /* background-color: #f5f5f5; */
+}
+
+.restaurant-card {
+  background-color: rgb(243,235,226);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.restaurant-card:hover {
+  transform: translateY(-5px);
+}
+
+.restaurant-image {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  transition: transform 0.4s ease-in-out;
+}
+
+.restaurant-card:hover .restaurant-image {
+  transform: scale(1.05);
+}
+
+.restaurant-info {
+  padding: 24px;
+}
+
+.restaurant-name {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  color: #333;
+  transition: color 0.4s ease-in-out;
+}
+
+.restaurant-card:hover .restaurant-name {
+  color: #FE9900;
+}
+
+.restaurant-address,
+.restaurant-phone {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 12px;
+}
+
+.explore-menu-btn {
+  background-color: #FE9900;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.4s ease-in-out;
+  animation: bounceIn 0.6s ease-in-out;
+}
+
+.explore-menu-btn:hover {
+  background-color: #e68800;
+}
+
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #FE9900;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 2s linear infinite;
+}
+
+.scroll-to-top {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  width: 50px; /* Fixed width */
+  height: 50px; /* Fixed height to make it a circle */
+  line-height: 50px; /* Center the icon/text vertically */
+  text-align: center; /* Center the icon/text horizontally */
+  background-color: #FE9900;
+  color: white;
+  border: none;
+  border-radius: 50%; /* Fully rounded corners for a circle */
+  padding: 0; /* Remove padding */
+  cursor: pointer;
+  font-size: 24px; /* Larger font size for visibility */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Smooth transitions for interaction */
+}
+
+.scroll-to-top:hover {
+  background-color: #e68800; /* Darker shade on hover */
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Increased shadow on hover */
+}
+
+.scroll-to-top:active {
+  background-color: #cc7a00; /* Even darker for click effect */
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.6); /* Smaller shadow to simulate pressing down */
+}
+
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,11 @@
+.paragraph-container {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #ffffff; /* White color for text */
+    background-color:rgba(255, 166, 0, 0.701); /* Orange color for background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center; 
+}
