@@ -1,17 +1,17 @@
-// App.js or index.js
-
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App'; // Import your main App component
-import { AuthProvider } from './AuthContext'; // Import the UserProvider from the UserContext file
+import { createRoot } from 'react-dom/client';
+import App from './App';
+import { AuthProvider } from './AuthContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 
-ReactDOM.render(
+const container = document.getElementById('root');
+const root = createRoot(container);
+
+root.render(
   <React.StrictMode>
-    <AuthProvider> {/* Wrap your App component with UserProvider */}
+    <AuthProvider>
       <App />
     </AuthProvider>
-  </React.StrictMode>,
-  document.getElementById('root')
+  </React.StrictMode>
 );
