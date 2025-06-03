@@ -1,56 +1,58 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import RestaurantCard from './RestaurantCard';
 import './Restaurants.css';
-import axios from 'axios';
-import { faker } from '@faker-js/faker';
 import { debounce } from 'lodash';
-import MenuFooter from './menuFooter';
- 
+
+const API_KEY = process.env.REACT_APP_PIXABAY;
+
 const Restaurants = () => {
+  const [restaurants, setRestaurants] = useState([]);
+  const [images, setImages] = useState([]);
   const [visibleCards, setVisibleCards] = useState(6);
   const [loading, setLoading] = useState(false);
-  const [restaurants, setRestaurants] = useState([]);
   const [hasMoreCards, setHasMoreCards] = useState(true);
-  const [showTopBtn, setShowTopBtn] = useState(false); // State to show or hide the top button
- 
-  faker.seed(99);
- 
- 
-const generateRandomImage = () => {
-  return faker.image.imageUrl(640, 480, 'restaurant', true);
-};
- 
+  const [showTopBtn, setShowTopBtn] = useState(false);
+
   useEffect(() => {
     const fetchRestaurants = async () => {
       try {
-        const response = await axios.get('http://localhost:8085/api/restaurants/');
-        setRestaurants(response.data);
-        if (response.data.length <= 6) {
-          setHasMoreCards(false);
-        }
-      } catch (error) {
-        console.error('Error fetching restaurants:', error);
+        const res = await axios.get('http://localhost:8085/api/restaurants/');
+        setRestaurants(res.data);
+        if (res.data.length <= 6) setHasMoreCards(false);
+      } catch (err) {
+        console.error('Error fetching restaurants:', err);
       }
     };
- 
+
+    const fetchImages = async () => {
+      try {
+        const res = await axios.get(`https://pixabay.com/api/?key=${API_KEY}&q=restaurant&image_type=photo&per_page=60`);
+        setImages(res.data.hits.map(hit => hit.webformatURL));
+      } catch (err) {
+        console.error('Error fetching images:', err);
+      }
+    };
+
     fetchRestaurants();
+    fetchImages();
   }, []);
- 
+
+  const getImageForRestaurant = (restaurantId) => {
+    const totalImages = images.length;
+    if (totalImages === 0) return '/images/default-restaurant.jpg';
+    const index = ((restaurantId - 1) % totalImages);
+    return images[index];
+  };
+
   const handleScroll = debounce(() => {
     const { scrollTop, clientHeight, scrollHeight } = document.documentElement;
- 
-    // Show or hide the top button
-    if (scrollTop > 500) {
-      setShowTopBtn(true);
-    } else {
-      setShowTopBtn(false);
-    }
- 
+    setShowTopBtn(scrollTop > 500);
     if (scrollTop + clientHeight >= scrollHeight - 300 && !loading && hasMoreCards) {
       loadMoreCards();
     }
   }, 100);
- 
+
   const loadMoreCards = () => {
     setLoading(true);
     setTimeout(() => {
@@ -62,38 +64,34 @@ const generateRandomImage = () => {
       setLoading(false);
     }, 2000);
   };
- 
+
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [handleScroll]);
- 
+
   const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
- 
+
   return (
     <div className="restaurants-container">
       {restaurants.slice(0, visibleCards).map((restaurant) => (
-        <RestaurantCard key={restaurant.restaurant_id} restaurant={restaurant} image={generateRandomImage()}/>
+        <RestaurantCard
+          key={restaurant.restaurant_id}
+          restaurant={restaurant}
+          image={getImageForRestaurant(restaurant.restaurant_id)}
+        />
       ))}
-      {loading && (
-        <div className="loading-spinner">
-          <div className="spinner"></div>
-        </div>
-      )}
+      {loading && <div className="loading-spinner"><div className="spinner"></div></div>}
       {!hasMoreCards && <p>No more restaurants to load.</p>}
       {showTopBtn && (
         <button onClick={scrollToTop} className="scroll-to-top">
-          <b style={{fontSize:"20px"}}>^</b>
+          <b style={{ fontSize: "20px" }}>^</b>
         </button>
       )}
     </div>
   );
 };
- 
+
 export default Restaurants;
- 
